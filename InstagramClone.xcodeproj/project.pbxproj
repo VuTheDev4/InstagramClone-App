@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EABBDBDE2168510600D8083A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBDBDD2168510600D8083A /* UserTableViewController.swift */; };
 		EAF098A9215DD10200DA37FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF098A8215DD10200DA37FC /* AppDelegate.swift */; };
 		EAF098AB215DD10200DA37FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF098AA215DD10200DA37FC /* ViewController.swift */; };
 		EAF098AE215DD10200DA37FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF098AC215DD10200DA37FC /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		74971384505ABC115D29118F /* Pods_InstagramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90874EAD36EFF0AD2525CD8B /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
+		EABBDBDD2168510600D8083A /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		EAF098A5215DD10200DA37FC /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF098A8215DD10200DA37FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF098AA215DD10200DA37FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				EAF098A8215DD10200DA37FC /* AppDelegate.swift */,
 				EAF098AA215DD10200DA37FC /* ViewController.swift */,
+				EABBDBDD2168510600D8083A /* UserTableViewController.swift */,
 				EAF098AC215DD10200DA37FC /* Main.storyboard */,
 				EAF098B2215DD10500DA37FC /* Assets.xcassets */,
 				EAF098B4215DD10500DA37FC /* LaunchScreen.storyboard */,
@@ -207,6 +210,7 @@
 			files = (
 				EAF098B1215DD10200DA37FC /* InstagramClone.xcdatamodeld in Sources */,
 				EAF098AB215DD10200DA37FC /* ViewController.swift in Sources */,
+				EABBDBDE2168510600D8083A /* UserTableViewController.swift in Sources */,
 				EAF098A9215DD10200DA37FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vuduong.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -382,7 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vuduong.InstagramClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
