@@ -20,11 +20,8 @@ class UserTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        refresher.attributedTitle = NSAttributedString(string: "Pullit to refreshit")
-        refresher.addTarget(self, action: #selector(UserTableViewController.getUsers), for: UIControlEvents.valueChanged)
-        tableView.addSubview(refresher)
-        
         getUsers()
+        pullToRefresh()
         
     }
     
@@ -66,7 +63,7 @@ class UserTableViewController: UITableViewController {
                 cell?.accessoryType = UITableViewCell.AccessoryType.none
                 
                 let query = PFQuery(className: "Following")
-                query.whereKey("follower", equalTo: PFUser.current()?.objectId)
+                query.whereKey("follower", equalTo: PFUser.current()?.objectId as Any)
                 query.whereKey("following", equalTo: objectIds[indexPath.row])
                 
                 query.findObjectsInBackground(block: { (objects, error) in
@@ -99,13 +96,20 @@ class UserTableViewController: UITableViewController {
         performSegue(withIdentifier: "logoutSegue", sender: self)
     }
     
+    func pullToRefresh() {
+        
+        refresher.attributedTitle = NSAttributedString(string: "Pullit to refreshit")
+        refresher.addTarget(self, action: #selector(UserTableViewController.getUsers), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
+        
+    }
     
     @objc func getUsers() {
         
         let query = PFUser.query()
         
         //remove self user from array
-        query?.whereKey("username", notEqualTo: PFUser.current()?.username!)
+        query?.whereKey("username", notEqualTo: PFUser.current()?.username! as Any)
         
         query?.findObjectsInBackground(block: { (users, error) in
             if error != nil {
@@ -129,7 +133,7 @@ class UserTableViewController: UITableViewController {
                                 self.objectIds.append(objectId)
                                 
                                 let query = PFQuery(className: "Following")
-                                query.whereKey("follower", equalTo: PFUser.current()?.objectId)
+                                query.whereKey("follower", equalTo: PFUser.current()?.objectId as Any)
                                 query.whereKey("following", equalTo: objectId)
                                 
                                 query.findObjectsInBackground(block: { (objects, error) in
