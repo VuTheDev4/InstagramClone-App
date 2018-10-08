@@ -14,12 +14,18 @@ class UserTableViewController: UITableViewController {
     var usernames : [String] = []
     var objectIds : [String] = []
     var isFollowing : [String : Bool] = ["" : true]
+    var refresher : UIRefreshControl = UIRefreshControl()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        refresher.attributedTitle = NSAttributedString(string: "Pullit to refreshit")
+        refresher.addTarget(self, action: #selector(UserTableViewController.getUsers), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refresher)
+        
         getUsers()
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,7 +77,7 @@ class UserTableViewController: UITableViewController {
                         }
                     }
                 })
-                
+
             } else {
                 
                 isFollowing[objectIds[indexPath.row]] = true
@@ -83,12 +89,8 @@ class UserTableViewController: UITableViewController {
                 following["following"] = objectIds[indexPath.row]
                 
                 following.saveInBackground()
-                
             }
         }
-        
-        
-        
     }
     
     @IBAction func logoutUser(_ sender: Any) {
@@ -97,7 +99,8 @@ class UserTableViewController: UITableViewController {
         performSegue(withIdentifier: "logoutSegue", sender: self)
     }
     
-    func getUsers() {
+    
+    @objc func getUsers() {
         
         let query = PFUser.query()
         
@@ -137,15 +140,17 @@ class UserTableViewController: UITableViewController {
                                             self.isFollowing[objectId] = false
                                         }
                                         
+                                        if self.usernames.count == self.isFollowing.count {
+                                        
                                         self.tableView.reloadData()
+                                        self.refresher.endRefreshing()
+                                        }
                                     }
                                 })
-                                
                             }
                         }
                     }
                 }
-                
             }
         })
     }
