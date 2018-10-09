@@ -19,6 +19,40 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateFeed()
+        
+    }
+
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return comments.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedTableViewCell
+
+        imageFiles[indexPath.row].getDataInBackground { (data, error) in
+            if let imageData = data {
+                if let imageToDisplay = UIImage(data: imageData) {
+                    cell.postedImage.image = imageToDisplay
+                }
+            }
+        }
+        
+        cell.comment.text = comments[indexPath.row]
+        cell.userInfo.text = usernames[indexPath.row]
+
+        return cell
+    }
+
+    func updateFeed() {
+        
         let query = PFUser.query()
         query?.whereKey("username", notEqualTo: PFUser.current()?.username as Any)
         query?.findObjectsInBackground(block: { (objects, error) in
@@ -28,7 +62,7 @@ class FeedTableViewController: UITableViewController {
                 for object in users {
                     if let user = object as? PFUser {
                         if let userObjectId = user.objectId {
-                    self.users[userObjectId] = user.username
+                            self.users[userObjectId] = user.username
                         }
                     }
                 }
@@ -48,7 +82,6 @@ class FeedTableViewController: UITableViewController {
                                         self.usernames.append(self.users[post["userid"] as! String]!)
                                         self.imageFiles.append(post["imageFile"] as! PFFile)
                                         self.tableView.reloadData()
-                                        
                                     }
                                 }
                             })
@@ -57,38 +90,5 @@ class FeedTableViewController: UITableViewController {
                 })
             }
         })
-        
     }
-
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return comments.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedTableViewCell
-
-        imageFiles[indexPath.row].getDataInBackground { (data, error) in
-            if let imageData = data {
-                if let imageToDisplay = UIImage(data: imageData) {
-                    cell.postedImage.image = imageToDisplay
-                }
-            }
-        }
-        
-        
-        cell.comment.text = comments[indexPath.row]
-        cell.userInfo.text = usernames[indexPath.row]
-
-        return cell
-    }
-
-    
-
 }
