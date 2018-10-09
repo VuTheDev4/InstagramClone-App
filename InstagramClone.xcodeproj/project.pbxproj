@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		EABBDBDE2168510600D8083A /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBDBDD2168510600D8083A /* UserTableViewController.swift */; };
 		EABBDBE0216B022500D8083A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBDBDF216B022500D8083A /* PostViewController.swift */; };
+		EABBDBE2216BA8F400D8083A /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBDBE1216BA8F400D8083A /* FeedTableViewController.swift */; };
+		EABBDBE4216BAFB400D8083A /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABBDBE3216BAFB400D8083A /* FeedTableViewCell.swift */; };
+		EABBDBE6216BB53000D8083A /* lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EABBDBE5216BB53000D8083A /* lake.jpg */; };
 		EAF098A9215DD10200DA37FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF098A8215DD10200DA37FC /* AppDelegate.swift */; };
 		EAF098AB215DD10200DA37FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF098AA215DD10200DA37FC /* ViewController.swift */; };
 		EAF098AE215DD10200DA37FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAF098AC215DD10200DA37FC /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 		90874EAD36EFF0AD2525CD8B /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		EABBDBDD2168510600D8083A /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		EABBDBDF216B022500D8083A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		EABBDBE1216BA8F400D8083A /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		EABBDBE3216BAFB400D8083A /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		EABBDBE5216BB53000D8083A /* lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lake.jpg; sourceTree = "<group>"; };
 		EAF098A5215DD10200DA37FC /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAF098A8215DD10200DA37FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EAF098AA215DD10200DA37FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				EAF098AA215DD10200DA37FC /* ViewController.swift */,
 				EABBDBDD2168510600D8083A /* UserTableViewController.swift */,
 				EABBDBDF216B022500D8083A /* PostViewController.swift */,
+				EABBDBE1216BA8F400D8083A /* FeedTableViewController.swift */,
+				EABBDBE3216BAFB400D8083A /* FeedTableViewCell.swift */,
+				EABBDBE5216BB53000D8083A /* lake.jpg */,
 				EAF098AC215DD10200DA37FC /* Main.storyboard */,
 				EAF098B2215DD10500DA37FC /* Assets.xcassets */,
 				EAF098B4215DD10500DA37FC /* LaunchScreen.storyboard */,
@@ -157,6 +166,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABBDBE6216BB53000D8083A /* lake.jpg in Resources */,
 				EAF098B6215DD10500DA37FC /* LaunchScreen.storyboard in Resources */,
 				EAF098B3215DD10500DA37FC /* Assets.xcassets in Resources */,
 				EAF098AE215DD10200DA37FC /* Main.storyboard in Resources */,
@@ -212,6 +222,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAF098B1215DD10200DA37FC /* InstagramClone.xcdatamodeld in Sources */,
+				EABBDBE2216BA8F400D8083A /* FeedTableViewController.swift in Sources */,
+				EABBDBE4216BAFB400D8083A /* FeedTableViewCell.swift in Sources */,
 				EAF098AB215DD10200DA37FC /* ViewController.swift in Sources */,
 				EABBDBDE2168510600D8083A /* UserTableViewController.swift in Sources */,
 				EAF098A9215DD10200DA37FC /* AppDelegate.swift in Sources */,
